@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EPIC Lifestyle Center</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Work+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+            <script>
+    const tickerTrack = document.querySelector('[data-ticker-track]');
+    const updateTicker = () => {
+      if (!tickerTrack) return;
+      const offset = window.scrollY * 0.4;
+      tickerTrack.style.transform = `translateX(-${offset}px)`;
+    };
+    updateTicker();
+    window.addEventListener('scroll', updateTicker, { passive: true });
+
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    sections.forEach((section) => {
+      section.classList.add('animate-section');
+      observer.observe(section);
+    });
+  </script>
+</head>
+<body class="bg-[#060606] text-white overflow-x-hidden">
+  <main>
+    <nav class="fixed top-0 left-0 right-0 z-50 px-6 md:px-12 py-6 bg-gradient-to-b from-[#060606] via-[#060606]/80 to-transparent">
+      <div class="flex justify-between items-start nav__inner">
+        <a href="/" class="text-white text-2xl tracking-[0.4em] font-bold site-logo">EPIC</a>
+        <button class="menu-button" aria-label="Open navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <section class="hero section-dark" id="home">
+      <div class="hero__inner">
+        <p class="hero__eyebrow">EPIC LIFESTYLE CENTER</p>
+        <h1 class="hero__headline">Where a city rehearses<br />its future.</h1>
+        <div class="emoji-cluster hero-emoji" aria-hidden="true">
+          <span class="emoji emoji--media" aria-hidden="true">&#128247;</span>
+          <span class="emoji emoji--social" aria-hidden="true">&#129309;</span>
+        </div>
+        <div class="hero__drive-type" aria-hidden="true">
+          <span>EPIC</span>
+        </div>
+        <div class="hero__ticker" aria-label="Live. Learn. Recover. Create. Repeat.">
+          <div class="hero__ticker-track" data-ticker-track>
+            <span>Live.</span>
+            <span>Learn.</span>
+            <span>Recover.</span>
+            <span>Create.</span>
+            <span>Repeat.</span>
+            <span>Live.</span>
+            <span>Learn.</span>
+            <span>Recover.</span>
+            <span>Create.</span>
+            <span>Repeat.</span>
+          </div>
+        </div>
+        <div class="hero__gallery" aria-label="EPIC Lifestyle Center moments">
+          <figure>
+            <img src="fdbd09a3d458a1a5631be708b060794a.jpg" alt="Immersive gala stage" />
+          </figure>
+          <figure>
+            <img src="2042d5e371ed18dd1a7de511b5dbdd81.jpg" alt="Performance lab in session" />
+          </figure>
+          <figure>
+            <img src="510e27a3dc5f0d37414b4dcc624ec365.jpg" alt="Creative lounge with founders" />
+          </figure>
+        </div>
+      </div>
+    </section>    <section class="story-intro section-yellow" id="story">
+      <div class="story-intro__inner">
+                <div class="story-intro__media-grid" aria-label="EPIC Lifestyle Center gallery">
+          <figure class="story-intro__media-main">
+            <img src="c72e7c451c58d102c4247a107354be90.jpg" alt="Ballroom ready for plenary" />
+            <figcaption>Stages that transform between summits, dinners, and screenings.</figcaption>
+          </figure>
+          <figure class="story-intro__media-side">
+            <img src="35f423fa3cc199e04ca1ba53910f1911.jpg" alt="Product sprint wall" />
+            <figcaption>Founders working through prototypes in a sunlight studio.</figcaption>
+          </figure>
+          <div class="story-intro__media-card">
+            <p class="story-intro__media-label">Open Hours</p>
+            <p class="story-intro__media-value">18 hrs</p>
+            <p>of curated programs, screenings, and recoveries every day.</p>
+          </div>
+          <figure class="story-intro__media-tile">
+            <img src="9ed8b0fe8f90a2e8704dd010e24a8e99.jpg" alt="Communal supper" />
+            <figcaption>Residents closing the day together around a long table.</figcaption>
+          </figure>
+        </div>
+        <div class="story-intro__content">
+          <div class="story-intro__label-row">
+            <p class="story-intro__label">Hero</p>
+            <span class="story-intro__badge">EPIC</span>
+          </div>
+          <h2 class="story-intro__headline">
+            <span>City stage.</span>
+            <span>Human lab.</span>
+            <span>Living room.</span>
+          </h2>
+          <div class="story-intro__copy">
+            <p>EPIC Lifestyle Center is a stacked playground where culture, wellness, dining, and retail run side by side.</p>
+            <p>Think of a museum, fashion lab, and science studio sharing one roof and keeping the doors open to the city.</p>
+            <p>It is a compact operating system for gathering, recovering, creating, and playing on repeat.</p>
+          </div>
+          <div class="story-intro__meta">
+            <div class="story-intro__meta-card">
+              <p class="story-intro__meta-label">Programs</p>
+              <p class="story-intro__meta-value">36+</p>
+              <p>Live rituals, summits, and late-night labs hosted each week.</p>
+            </div>
+            <div class="story-intro__meta-card">
+              <p class="story-intro__meta-label">Studios</p>
+              <p class="story-intro__meta-value">5</p>
+              <p>Stacked floors tuned for motion, recovery, signal, and stage.</p>
+            </div>
+            <div class="story-intro__meta-card">
+              <p class="story-intro__meta-label">Community</p>
+              <p class="story-intro__meta-value">24/7</p>
+              <p>Access for builders, curators, and civic hosts.</p>
+            </div>
+          </div>
+          <a class="story-intro__cta" href="#story">EPIC Lifestyle Center</a>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section class="py-24 md:py-32 section-dark constellation">
+      <div class="max-w-[1600px] mx-auto px-6 md:px-12 constellation__intro">
+        <div>
+          <p class="text-[11px] tracking-[0.3em] uppercase opacity-60 normal-case">About</p>
+          <h3 class="text-4xl md:text-6xl font-founders mt-4">Life rehearsed in one block.</h3>
+          <div class="constellation__summary text-lg md:text-xl leading-relaxed font-staff">
+            <p>EPIC runs as a soft machine where light, sound, and circulation are tuned for how people actually feel.</p>
+            <p>Each floor reconfigures quickly, so summits, rituals, screenings, and wellness labs can trade the same stage in a single day.</p>
+          </div>
+        </div>
+        <div class="constellation__tags" aria-label="EPIC constellation tags">
+          <span>EPIC SPACE</span>
+          <span>EPIC BODY</span>
+          <span>EPIC BIO</span>
+          <span>EPIC STUDIO</span>
+          <span>EPIC SOCIAL</span>
+          <span>MARKET EPIC</span>
+        </div>
+      </div>
+                  <div class="constellation__grid max-w-[1600px] mx-auto px-6 md:px-12">
+        <figure class="constellation__card">
+          <div class="constellation__media">
+            <img src="space.jpg" alt="EPIC Space" />
+          </div>
+          <figcaption>
+            <p class="constellation__label">EPIC SPACE</p>
+            <p class="constellation__tagline">Launch Chamber</p>
+            <p class="constellation__body">A cinematic hall tuned for summits, premieres, and worship with immaculate light and acoustics.</p>
+          </figcaption>
+        </figure>
+        <figure class="constellation__card">
+          <div class="constellation__media">
+            <img src="2042d5e371ed18dd1a7de511b5dbdd81.jpg" alt="EPIC Body" />
+          </div>
+          <figcaption>
+            <p class="constellation__label">EPIC BODY</p>
+            <p class="constellation__tagline">Movement Lab</p>
+            <p class="constellation__body">A gallery-like gym where trainers and creatives shape strength, mobility, and flow.</p>
+          </figcaption>
+        </figure>
+        <figure class="constellation__card">
+          <div class="constellation__media">
+            <img src="0f9d13661868cf1c6f4d22803cd0c85a.jpg" alt="EPIC Bio" />
+          </div>
+          <figcaption>
+            <p class="constellation__label">EPIC BIO</p>
+            <p class="constellation__tagline">Recovery Lab</p>
+            <p class="constellation__body">Calm tech rituals&mdash;cryo, light, IV&mdash;reset founders like a spa built by scientists.</p>
+          </figcaption>
+        </figure>
+        <figure class="constellation__card">
+          <div class="constellation__media">
+            <img src="5ed6f6160f99e48563aca2a34039ccdd.jpg" alt="EPIC Studio" />
+          </div>
+          <figcaption>
+            <p class="constellation__label">EPIC STUDIO</p>
+            <p class="constellation__tagline">Broadcast Core</p>
+            <p class="constellation__body">Sound stages, podcast bays, and edit suites export the city's ideas daily.</p>
+          </figcaption>
+        </figure>
+        <figure class="constellation__card">
+          <div class="constellation__media">
+            <img src="510e27a3dc5f0d37414b4dcc624ec365.jpg" alt="EPIC Social" />
+          </div>
+          <figcaption>
+            <p class="constellation__label">EPIC SOCIAL</p>
+            <p class="constellation__tagline">Living Room</p>
+            <p class="constellation__body">A calm lounge where coffee, meetings, and happenstance collisions share the same table.</p>
+          </figcaption>
+        </figure>
+        <figure class="constellation__card">
+          <div class="constellation__media">
+            <img src="5c739c237f5435b1b2f9b472f96cb081.jpg" alt="Market EPIC" />
+          </div>
+          <figcaption>
+            <p class="constellation__label">MARKET EPIC</p>
+            <p class="constellation__tagline">Street Stage</p>
+            <p class="constellation__body">Rotating markets and pop-ups keep the plaza buzzing long after the program day ends.</p>
+          </figcaption>
+        </figure>
+      </div>
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-4 px-6 md:px-12 max-w-[1600px] mx-auto media-split">
+        <figure class="relative h-96 overflow-hidden">
+          <img src="5c739c237f5435b1b2f9b472f96cb081.jpg" alt="Market atrium glow" class="absolute inset-0 w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500" />
+        </figure>
+        <figure class="relative h-96 overflow-hidden">
+          <img src="ace9800ff0bf09a6a74c2b978de8ebe9.jpg" alt="Daylight lounge" class="absolute inset-0 w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500" />
+        </figure>
+      </div>
+    </section>
+
+    <section id="team" class="flex items-center px-6 md:px-12 py-[50px] section-yellow">
+      <div class="max-w-[1600px] mx-auto w-full">
+        <div class="grid md:grid-cols-2 gap-12 md:gap-24 items-start">
+          <div>
+            <p class="text-[11px] tracking-[0.3em] mb-8 uppercase opacity-60 normal-case">Why EPIC, Why Now?</p>
+            <h2 class="text-6xl md:text-8xl mb-12 font-founders">Cities are evolving from collections of buildings into networks of experiences.</h2>
+            <a href="#team" class="inline-flex border border-black px-8 py-4 rounded-full hover:bg-black hover:text-white transition text-sm tracking-[0.25em] uppercase normal-case">EPIC Lifestyle Center is built as a prototype of that future: one address, many interfaces.</a>
+          </div>
+          <div class="text-lg md:text-2xl leading-relaxed font-staff space-y-4">
+            <p>Events produce culture.</p>
+            <p>Wellness and biohacking produce resilience.</p>
+            <p>Studios produce narrative.</p>
+            <p>Cafes and markets produce community.</p>
+            <p>The result is an ecosystem where human potential isn't just talked about on a stage&mdash;it's tested, trained, filmed, and shared.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="py-24 md:py-32 px-6 md:px-12 section-dark">
+      <div class="max-w-[1600px] mx-auto">
+        <div class="mb-16">
+          <img src="https://ext.same-assets.com/1577912255/2585481321.svg" alt="EPIC Lifestyle Center mark" class="w-8 mb-4" />
+          <p class="text-[11px] tracking-[0.3em] uppercase normal-case">For Founders, Curators &amp; Visionaries</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-12 mb-24 text-lg md:text-xl leading-relaxed font-staff">
+          <p>Host your global conference in a hall that behaves like a light sculpture. Launch your wellness concept where clients already think in biometrics.</p>
+          <p>Record your next series in a studio wired to the heartbeat of the building. Stage a festival that feels less like an event and more like a city-wide mood shift.</p>
+        </div>
+        <div class="conviction__metrics">
+          <div class="conviction__metrics-row font-founders">
+            <span>EPIC Lifestyle Center is an invitation:</span>
+            <span>to program the future of urban life,</span>
+            <span>to prototype better ways of being human together,</span>
+            <span>and to give those ideas a home worthy of their ambition.</span>
+            <span>EPIC Lifestyle Center is an invitation:</span>
+          </div>
+          <div class="conviction__metrics-row font-founders">
+            <span>Live.</span>
+            <span>Learn.</span>
+            <span>Recover.</span>
+            <span>Create.</span>
+            <span>Repeat.</span>
+          </div>
+        </div>
+        <div class="mt-24 grid grid-cols-1 md:grid-cols-2 gap-4 media-split">
+          <figure class="relative h-96 overflow-hidden">
+            <img src="35f423fa3cc199e04ca1ba53910f1911.jpg" alt="Design sprint in progress" class="absolute inset-0 w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500" />
+          </figure>
+          <figure class="relative h-96 overflow-hidden bg-gray-900 flex items-center justify-center p-8">
+            <img src="ccb2e874303db98b96dc0fb8d8b8b1d7.jpg" alt="Podcast studio recording" class="w-full h-auto grayscale hover:grayscale-0 transition duration-500" />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="portfolio" class="py-24 md:py-32 px-6 md:px-12 section-yellow">
+      <div class="max-w-[1600px] mx-auto">
+        <div class="mb-16">
+          <img src="https://ext.same-assets.com/1577912255/991663493.svg" alt="EPIC Lifestyle Center icon" class="w-8 mb-4" />
+          <p class="text-[11px] tracking-[0.3em] uppercase mb-12 normal-case">EPIC Lifestyle Center</p>
+        </div>
+        <h2 class="text-6xl md:text-8xl mb-12 font-founders">Live. Learn. Recover. Create. Repeat.</h2>
+        <p class="text-lg md:text-xl max-w-4xl mb-12 leading-relaxed font-staff">Where a city rehearses its future.</p>
+        <a href="#portfolio" class="inline-flex border border-black px-8 py-4 rounded-full hover:bg-black hover:text-white transition text-sm tracking-[0.25em] uppercase mb-24 normal-case">EPIC Lifestyle Center</a>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 media-split">
+          <figure class="relative h-96 overflow-hidden">
+            <img src="0f6218f2750cb690f9d68702b042a4c1.jpg" alt="Roundtable salon" class="absolute inset-0 w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500" />
+          </figure>
+          <figure class="relative h-96 overflow-hidden">
+            <img src="9ed8b0fe8f90a2e8704dd010e24a8e99.jpg" alt="Neighborhood supper club" class="absolute inset-0 w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500" />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="contact" class="pt-[100px] pb-24 md:pb-32 px-6 md:px-12 section-dark border-t border-gray-800">
+      <div class="max-w-[1600px] mx-auto">
+        <div class="mb-16 flex justify-end opacity-20">
+          <img src="https://ext.same-assets.com/1577912255/4193652395.svg" alt="EPIC Lifestyle Center" class="w-72" />
+        </div>
+        <h2 class="text-5xl md:text-7xl lg:text-8xl mb-6 leading-tight font-founders">
+          EPIC Lifestyle Center<br />
+          Live. Learn. Recover.<br />
+          Create. Repeat.
+        </h2>
+        <div class="emoji-cluster contact-emoji" aria-hidden="true">
+          <span class="emoji emoji--lab" aria-hidden="true">&#129516;</span>
+          <span class="emoji emoji--gym" aria-hidden="true">&#128170;</span>
+        </div>
+        <div class="mt-16 mb-32">
+          <p class="text-[11px] tracking-[0.3em] uppercase mb-6 normal-case">EPIC Lifestyle Center is an invitation:</p>
+          <form class="flex flex-wrap gap-4 max-w-2xl">
+            <input type="email" placeholder="to program the future of urban life," class="flex-1 bg-transparent border border-white px-6 py-4 text-white placeholder-gray-500 rounded-full focus:outline-none focus:border-gray-400 text-sm font-staff normal-case" />
+            <button type="submit" class="bg-white text-black p-4 rounded-full hover:bg-gray-200 transition w-14 h-14 flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </button>
+          </form>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-sm font-staff mb-24 contact-links">
+          <div class="space-y-3">
+            <a href="/portfolio" class="block hover:opacity-70 transition">EPIC SPACE &mdash; The Signature Chamber</a>
+            <a href="/our-story" class="block hover:opacity-70 transition">EPIC BODY &mdash; The Movement Atelier</a>
+            <a href="/team" class="block hover:opacity-70 transition">EPIC BIO &mdash; The Recovery Lab</a>
+            <a href="/careers" class="block hover:opacity-70 transition">EPIC STUDIO &mdash; Signal to the World</a>
+            <a href="/talent" class="block hover:opacity-70 transition">EPIC SOCIAL &mdash; The Civic Living Room</a>
+          </div>
+          <div class="space-y-3">
+            <a href="/media-kit" class="block hover:opacity-70 transition">MARKET EPIC &mdash; The Street as Stage</a>
+            <a href="/diversity" class="block hover:opacity-70 transition">Why EPIC, Why Now?</a>
+            <a href="mailto:info@drivecapital.com" class="block hover:opacity-70 transition">For Founders, Curators &amp; Visionaries</a>
+            <a href="https://drive-capital.lpx.fund/" class="block hover:opacity-70 transition">EPIC Lifestyle Center</a>
+            <a href="/seed-program" class="block hover:opacity-70 transition">Live. Learn. Recover. Create. Repeat.</a>
+          </div>
+        </div>
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 text-sm font-staff">
+          <div>
+            <img src="https://ext.same-assets.com/1577912255/871304872.svg" alt="EPIC Lifestyle Center" class="w-32 mb-4" />
+            <p class="text-gray-500 text-xs normal-case">to prototype better ways of being human together,</p>
+            <p class="text-gray-500 text-xs normal-case">and to give those ideas a home worthy of their ambition.</p>
+          </div>
+          <div class="flex gap-6">
+            <a href="https://www.linkedin.com/company/drivecapital/" target="_blank" rel="noopener noreferrer" class="hover:opacity-70 transition">
+              <img src="https://ext.same-assets.com/1577912255/4206721812.svg" alt="Live." class="w-5 h-5" />
+            </a>
+            <a href="https://twitter.com/drivecapital" target="_blank" rel="noopener noreferrer" class="hover:opacity-70 transition">
+              <img src="https://ext.same-assets.com/1577912255/2993179276.svg" alt="Learn." class="w-5 h-5" />
+            </a>
+            <a href="https://www.youtube.com/c/DriveCapital" target="_blank" rel="noopener noreferrer" class="hover:opacity-70 transition">
+              <img src="https://ext.same-assets.com/1577912255/1030547129.svg" alt="Recover." class="w-5 h-5" />
+            </a>
+          </div>
+          <div class="text-gray-500 text-xs normal-case">Where a city rehearses its future.</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+            <script>
+    const tickerTrack = document.querySelector('[data-ticker-track]');
+    const updateTicker = () => {
+      if (!tickerTrack) return;
+      const offset = window.scrollY * 0.4;
+      tickerTrack.style.transform = `translateX(-${offset}px)`;
+    };
+    updateTicker();
+    window.addEventListener('scroll', updateTicker, { passive: true });
+
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    sections.forEach((section) => {
+      section.classList.add('animate-section');
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
